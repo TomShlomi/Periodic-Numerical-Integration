@@ -6,5 +6,6 @@ function [] = trapeziumPlot(n, f, a, b)
     
     plot(x, y)
     axis([a b min(y) max(y)])
+    hold off
 end
 
