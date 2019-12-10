@@ -6,7 +6,7 @@ function [dif, precent] = midpointPlot(n, f, a, b)
     %precent is the precent difference between the actual integral and the approximation
     clf %clears plot
     hold on %allows for multiple functions in a plot
-    fplot(f, [a,b]) %plots f in the range [a,b]
+    fplot(f, [a b]) %plots f in the range [a,b]
     x = linspace(a, b, n + 1); %the endpoints of the panes
     numint = 0; %the approximate integral
     for i = 1:n
@@ -14,7 +14,7 @@ function [dif, precent] = midpointPlot(n, f, a, b)
       plot([x(i) x(i+1)], [y y])%plots the midpoint interpolant
       numint = numint + y; %adds the value at the midpoint to the approximate integral
     end
-    axis([a b])
+    xlim([a b])
     hold off
     numint = numint*(b-a)/n; %scales the approximate integral
     int = integral(f, a, b); %calculates the integral of f over [a,b]

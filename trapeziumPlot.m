@@ -10,7 +10,7 @@ function [dif precent] = trapeziumPlot(n, f, a, b)
     x = linspace(a, b, n + 1); %the endpoints of the panes
     y = f(x); %the values at those endpoints
     plot(x, y) 
-    axis([a b]) %sets bounds of plot
+    xlim([a b]) %sets bounds of plot
     hold off
     int = integral(f, a, b); %calculates the integral of f over [a,b]
     %We assume this is completely accurate, which is not true but more than good enough for our purposes
